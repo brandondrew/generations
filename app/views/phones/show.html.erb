@@ -1,24 +1,28 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Phone -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Phone %></h1>
+</div>
 
-<p>
-  <strong>Number:</strong>
-  <%= @phone.number %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:number) %></dt>
+      <dd><pre class="prettyprint"><%= @phone.number %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:type) %></dt>
+      <dd><pre class="prettyprint"><%= @phone.type %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:label) %></dt>
+      <dd><pre class="prettyprint"><%= @phone.label %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @phone.type %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              phones_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_phone_path(@phone), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              phone_path(@phone),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Label:</strong>
-  <%= @phone.label %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @phone.user %>
-</p>
-
-<%= link_to 'Edit', edit_phone_path(@phone) %> |
-<%= link_to 'Back', phones_path %>
