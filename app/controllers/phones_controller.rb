@@ -29,6 +29,7 @@ class PhonesController < ApplicationController
   # POST /phones.json
   def create
     @phone = Phone.new(phone_params)
+    @phone.user = current_user
 
     respond_to do |format|
       if @phone.save
