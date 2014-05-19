@@ -1,4 +1,5 @@
 Generations::Application.routes.draw do
+  get "pages/index"
   resources :phones
 
   devise_for :admin_users, ActiveAdmin::Devise.config
