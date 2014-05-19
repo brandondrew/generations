@@ -43,3 +43,34 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'bundler'
+
+gem 'devise', github: 'plataformatec/devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'bootstrap-sass', github: 'twbs/bootstrap-sass'
+gem 'bootstrap-sass-extras'
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'simple_form'
+gem 'delayed_job', github: 'collectiveidea/delayed_job'
+gem 'delayed_job_active_record', github: 'collectiveidea/delayed_job_active_record'
+gem 'rails_config'
+gem 'binding_of_caller'
+gem 'validates_formatting_of'
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :development do
+  gem 'better_errors'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end
