@@ -1,4 +1,5 @@
 ActiveAdmin.register Phone do
+  permit_params :number, :type, :label
 
   
   # See permitted parameters documentation:
